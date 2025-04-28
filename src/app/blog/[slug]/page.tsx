@@ -70,8 +70,7 @@ interface PostPageProps {
 
 // --- Dynamic Metadata Generation ---
 export async function generateMetadata(
-  { params }: PostPageProps,
-  _parent: ResolvingMetadata // Prefix unused parent parameter
+  { params }: PostPageProps
 ): Promise<Metadata> {
   const slug = params.slug
 
