@@ -25,12 +25,23 @@ export const sanityClient = createClient(clientConfig)
 // (We might move this to a dedicated image utils file later)
 import imageUrlBuilder from '@sanity/image-url'
 
+// Define a basic type for the expected image source object
+type SanityImageSource = {
+  _type?: string; // Optional, might be 'image'
+  asset?: {
+    _ref: string;
+    _type: 'reference';
+  };
+  // Include other potential fields like hotspot, crop if needed
+};
+
 const builder = imageUrlBuilder(sanityClient)
 
-export function urlForImage(source: any) {
+export function urlForImage(source: SanityImageSource) {
   // Ensure that source image has asset object with _ref
-  if (!source || !source.asset)
+  if (!source?.asset?._ref) {
     return undefined
+  }
 
   return builder.image(source).auto('format').fit('max')
 } 

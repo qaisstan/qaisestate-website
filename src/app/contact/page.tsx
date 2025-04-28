@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
+// import Link from 'next/link' // Removed unused import
 import ContactForm from '@/components/ContactForm'
 
 // Simple SVG Instagram Icon (can reuse from Header or use library)
@@ -35,7 +35,7 @@ export default function ContactPage() {
       <div className="mx-auto max-w-2xl text-center">
         <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contact Us</h1>
         <p className="mt-2 text-lg leading-8 text-gray-600">
-          Have questions? We'd love to hear from you.
+          Have questions? We&apos;d love to hear from you.
         </p>
       </div>
 

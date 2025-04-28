@@ -35,7 +35,7 @@ interface Post {
   publishedAt?: string;
   author?: Author;
   categories?: CategoryInfo[];
-  body?: any[]; // Portable Text content
+  body?: object[]; // Use object[] instead of any[]
   seoTitle?: string;
   seoDescription?: string;
 }
@@ -71,7 +71,7 @@ interface PostPageProps {
 // --- Dynamic Metadata Generation ---
 export async function generateMetadata(
   { params }: PostPageProps,
-  parent: ResolvingMetadata
+  _parent: ResolvingMetadata // Prefix unused parent parameter
 ): Promise<Metadata> {
   const slug = params.slug
 

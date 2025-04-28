@@ -1,4 +1,5 @@
-import Image from 'next/image'
+// src/app/about/page.tsx
+// import Image from 'next/image' // Removed unused import
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
