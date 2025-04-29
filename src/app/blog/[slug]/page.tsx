@@ -5,7 +5,7 @@ import { groq } from 'next-sanity'
 import { format, parseISO } from 'date-fns'
 import { notFound } from 'next/navigation'
 import { PortableText } from '@portabletext/react'
-import type { Metadata, ResolvingMetadata } from 'next'
+import type { Metadata } from 'next'
 
 // Interfaces (Consider shared types)
 interface SanityImageReference {
